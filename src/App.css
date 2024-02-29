@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root{
+    margin: 0rem 5rem 0rem 5rem;
+
+    .mainSectionApp{
+        /* Makes the AboutUs and InfoBox standing next to eachother */
+        display: flex;
+
+    }
+}

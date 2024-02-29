@@ -1,0 +1,16 @@
+@import "../fonts/fonts.css";
+
+.navbar{
+    background-color: black;
+    color:azure;
+    width: auto;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .navTitle{
+        font-family: var(--font-madimiOne);
+    }
+}
