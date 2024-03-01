@@ -14,15 +14,16 @@ const aboutUsObj = {
   past_projects: bobTheBuilderJson.past_projects
 };
 
+
 //Gather only the relevant info for the InfoBox, as a object
-const infoBoxObj = bobTheBuilderJson.construction_workers;
+const allTheBuilders = bobTheBuilderJson.construction_workers;
 
   return (
     <>
       <NavBar />
       <section className="mainSectionApp">
         <AboutUs aboutUsObj={aboutUsObj} />
-        <InfoBox infoBoxObj={infoBoxObj}/>
+        <InfoBox allTheBuilders={allTheBuilders}/>
       </section>
     </>
   );

@@ -1,0 +1,17 @@
+.dropDownDiv{
+    margin: 1rem;
+    
+    .dropDownLable{
+        margin-right: 1rem;
+        font-size: larger;
+        font-weight: bolder;
+        
+    }
+
+    #builder-select{
+        
+         max-width: 30%; 
+         width: 30%;
+         margin-bottom: 1rem;
+    }
+}

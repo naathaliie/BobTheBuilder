@@ -1,18 +1,40 @@
+import "./BuilderCard.css";
 
-const BuilderCard = ({infoBoxObj, pickedBuilder}) => {
-    console.log("pickedBuilder", infoBoxObj[1].firstname);
-    
+const BuilderCard = ({ allTheBuilders, pickedBuilder }) => {
+  const split = pickedBuilder.split(" ");
+  const firstname = split[0];
 
-    const split = pickedBuilder.split(" ");
-    const firstname = split[0];
+  /* .find() is going to return a OBJECT of the ARRAY  */
+  const pickedBuilderInfo = allTheBuilders.find(
+    (char) => char.firstname === firstname
+  );
+  /* Collect all the values and keys from the object. Object.values(theObject)/Object.keys(theObject) will return a array, so we can use the .map() on it. */
+  const pickedBuilderValues = Object.values(pickedBuilderInfo);
+  const pickedBuilderKeys = Object.keys(pickedBuilderInfo);
 
-    return <h1>BuilderCard {pickedBuilder}</h1>
+  return (
+    <section className="builderCardSection">
+      <h1 className="builderH1"> Snabbfakta om {pickedBuilder}</h1>
+      <ul className="builderUl">
+        {pickedBuilderKeys.map((key, index) => {
+          return (
+            <li key={index} className={`key ${index}`}>
+              {key}{" "}
+              <ul><li className={`value ${index}`}>
+                {Array.isArray(pickedBuilderValues[index])
+                  ? pickedBuilderValues[index].join(", ")
+                  : pickedBuilderValues[index]}
+              </li></ul>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
 };
 
 export default BuilderCard;
 
-
-/* infoBoxObj är ett object och inte en array. Det gör att jag varken
-kan använda .map() eller .find().
-Jag vill göra om infoBoxObj till en array...men hur..
-kanske att jag skall skicka med eventet som jag får vid klick på en byggare istället? Kika på dropdownmenu3 */
+/* Rad 23. Man kan inte lägga en li-tagg innuti en li-tagg. Därav behöver jag sätta 
+ännu en ul-tagg så att det blir en "inbäddad" lista
+*/

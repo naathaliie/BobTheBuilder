@@ -1,0 +1,28 @@
+
+.builderCardSection {
+ 
+  margin: 1rem;
+  .builderH1 {
+    margin-bottom: 1rem;
+  }
+
+  .builderH1 {
+    color: rgba(0, 0, 0, 0.666);
+  }
+  .builderUl {
+    list-style: none;
+
+    .builderLi {
+    }
+
+    .key {
+      color: rgba(0, 0, 0, 0.666);
+      font-weight: bold;
+    }
+
+    .value {
+      color: rgb(95, 93, 150);
+      font-weight: lighter;
+    }
+  }
+}
